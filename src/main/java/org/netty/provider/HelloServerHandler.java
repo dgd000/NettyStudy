@@ -9,7 +9,7 @@ public class HelloServerHandler extends ChannelInboundHandlerAdapter{
     public void channelRead(ChannelHandlerContext ctx,Object msg) {
         System.out.println("server channelRead..");
         System.out.println(ctx.channel().remoteAddress() + "->Server:"+ msg.toString());
-        ctx.write("server write"+msg);
+        ctx.write("server write," + "Hello,I get message:" + msg);
         ctx.flush();
     }
 
