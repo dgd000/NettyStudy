@@ -22,11 +22,10 @@ public class NettyServer {
                             ChannelPipeline p = ch.pipeline();
                             p.addLast(new StringDecoder());
                             p.addLast(new StringEncoder());
-
+                            p.addLast(new HelloServerHandler());
                         }
                     });
             bootstrap.bind(hostname,port).sync();
-
         }catch (InterruptedException e) {
             e.printStackTrace();
         }
