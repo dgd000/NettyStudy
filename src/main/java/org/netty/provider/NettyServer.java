@@ -26,10 +26,10 @@ public class NettyServer {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
-//                            p.addLast(new StringDecoder());
-//                            p.addLast(new StringEncoder());
-//                            p.addLast(new HelloServerHandler());
-                            p.addLast(new SimpleHelloServerHandler());
+                            p.addLast(new StringDecoder());
+                            p.addLast(new StringEncoder());
+                            p.addLast(new HelloServerHandler());
+//                            p.addLast(new SimpleHelloServerHandler());
                         }
                     });
             ChannelFuture f = bootstrap.bind(hostname,port).sync();
