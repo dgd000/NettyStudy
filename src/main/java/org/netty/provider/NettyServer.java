@@ -29,7 +29,7 @@ public class NettyServer {
                             p.addLast(new StringDecoder());
                             p.addLast(new StringEncoder());
                             p.addLast(new HelloServerHandler());
-//                            p.addLast(new SimpleHelloServerHandler());
+                            p.addLast(new SimpleHelloServerHandler());
                         }
                     });
             ChannelFuture f = bootstrap.bind(hostname,port).sync();
